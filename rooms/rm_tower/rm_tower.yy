@@ -18,7 +18,6 @@
     {"name":"inst_3EA4ABEC","path":"rooms/rm_tower/rm_tower.yy",},
     {"name":"inst_3C707E91","path":"rooms/rm_tower/rm_tower.yy",},
     {"name":"inst_67C7A352","path":"rooms/rm_tower/rm_tower.yy",},
-    {"name":"inst_3DD2184F","path":"rooms/rm_tower/rm_tower.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -26,7 +25,6 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"bullets","depth":-499,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3C707E91","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_goblin","path":"objects/obj_enemy_goblin/obj_enemy_goblin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":43.0,"y":28.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67C7A352","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_goblin_bow","path":"objects/obj_enemy_goblin_bow/obj_enemy_goblin_bow.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":217.0,"y":28.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3DD2184F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_enemy_wolf","path":"objects/obj_enemy_wolf/obj_enemy_wolf.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":213.0,"y":140.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"wall","depth":-399,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7DBC2383","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"properties":[],"rotation":0.0,"scaleX":0.875,"scaleY":1.1875,"x":113.0,"y":74.0,},

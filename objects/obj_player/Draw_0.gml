@@ -1,7 +1,14 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+/// @description
 draw_self()
+
+if imunity_timer > 0 { imunity_timer -- }
+
+if imunity_timer > 0 and imunity_timer % 5 == 0 
+{
+	gpu_set_fog(true, c_white, 0, 0)
+	draw_self()
+	gpu_set_fog(false, c_white, 0, 0)
+}
 
 
 draw_sprite_ext(

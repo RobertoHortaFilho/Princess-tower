@@ -11,6 +11,8 @@ depth = -y
 gun_recoil.position = lerp(gun_recoil.position, 0, .05)
 gun_recoil.scale = lerp(gun_recoil.scale, 1, .05)
 
+if life <= 0 { state = STATES.DEATH }
+
 switch state {
 	case STATES.IDLE:
 		hspd = 0;

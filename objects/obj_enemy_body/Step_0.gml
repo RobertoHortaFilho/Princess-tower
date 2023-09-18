@@ -12,6 +12,11 @@ if state = STATES.KNOCKBACK {
 	if alarm[11] < 0 {
 		state = STATES.RUN
 	}
+} else if state = STATES.DEATH {
+	instance_destroy()
 }
+
+if life <= 0 { state = STATES.DEATH }
+
 
 depth = -y

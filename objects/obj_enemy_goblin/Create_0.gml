@@ -11,3 +11,5 @@ spd = .3
 chase_min = 60
 chase_max = 70
 attack_range = 10
+
+back_distance = 2

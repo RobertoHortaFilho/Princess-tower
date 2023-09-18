@@ -1,6 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+/// @description 
 
 keys = {
 	up: vk_up,
@@ -9,13 +7,16 @@ keys = {
 	right: vk_right,
 	shoot: mb_left
 }
-
 state = STATES.IDLE
 
+
+life = 10
 spd = 1
 hspd = 0
 vspd = 0
 atkspd = 30
+dmg = 1
+imunity_timer = 0
 
 
 gun_position = {
@@ -52,7 +53,8 @@ function shoot() {
 		alarm[0] = atkspd
 		// create shoot
 		var _bullet = instance_create_layer(gun_position.x, gun_position.y + gun_recoil.position, "bullets", obj_player_bullete, {
-			direction: gun_position.angle
+			direction: gun_position.angle,
+			dmg: dmg,
 		})
 		gun_recoil.position = -3
 		gun_recoil.scale = 1.3
@@ -60,7 +62,10 @@ function shoot() {
 }
 
 function levar_dano() {
-	//show_message("take_damage")
+	if (imunity_timer <= 0) {
+		life -= 1
+		imunity_timer = game_get_speed(gamespeed_fps)
+	}
 }
 
 take_damage = levar_dano

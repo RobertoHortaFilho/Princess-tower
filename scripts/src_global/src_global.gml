@@ -8,6 +8,7 @@ enum STATES {
 	KNOCKBACK,
 }
 
-function src_global(){
+
+function src_reset_player_status(){
 
 }
