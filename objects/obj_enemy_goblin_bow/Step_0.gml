@@ -1,5 +1,6 @@
 switch state {
 	case STATES.RUN:
+	sprite_index = spr_goblin_archer
 	if instance_exists(obj_tower) {
 		dir = point_direction(x,y, obj_tower.x, obj_tower.y)
 	}
@@ -17,7 +18,7 @@ switch state {
 	
 	break;
 	case STATES.CHASE:
-	
+	sprite_index = spr_goblin_archer
 	if instance_exists(obj_player) {
 		var _near = instance_nearest(x,y,obj_player)
 		dir = point_direction(x, y, _near.x, _near.y)
@@ -29,33 +30,23 @@ switch state {
 		if _dis > chase_min {
 			state = STATES.RUN
 		}
-		if _dis < attack_range {
+		if _dis < attack_range and alarm[0] <= 0 {
 			state = STATES.IDLE
-			alarm[0] = game_get_speed(gamespeed_fps) / 2
-		}
+			image_index = 0
+			}
 		  
-	} else {
-		state = STATES.RUN
-	}
+		} else { // se o player n existir
+			state = STATES.RUN
+		}
 	break;
 	case STATES.IDLE:
+	sprite_index = spr_goblin_archer_shooting
 		hspd = 0
 		vspd = 0
-		image_blend = c_yellow
-		if alarm[0] == -1 { state = STATES.ATTACK; alarm[0] = game_get_speed(gamespeed_fps) / 4} 
 	break;
 	case STATES.ATTACK:
 		hspd = 0
 		vspd = 0
-		image_blend = c_red
-		if alarm[0] == -1 {
-			state = STATES.RUN
-			if instance_exists(obj_player) {
-				var _near = instance_nearest(x,y,obj_player)
-				dir = point_direction(x, y, _near.x, _near.y)
-				instance_create_layer(x,y - 6, "bullets", obj_arrow, { direction: dir })
-			}
-		} 
 	break;
 }
 

@@ -7,6 +7,7 @@ keys = {
 	right: vk_right,
 	shoot: mb_left
 }
+number = 1
 state = STATES.IDLE
 
 
@@ -17,6 +18,7 @@ vspd = 0
 atkspd = 30
 dmg = 1
 imunity_timer = 0
+life_animation = false
 
 
 gun_position = {
@@ -64,6 +66,7 @@ function shoot() {
 function levar_dano() {
 	if (imunity_timer <= 0) {
 		life -= 1
+		life_animation = true
 		imunity_timer = game_get_speed(gamespeed_fps)
 	}
 }
