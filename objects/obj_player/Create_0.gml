@@ -7,6 +7,14 @@ keys = {
 	right: vk_right,
 	shoot: mb_left
 }
+
+sprites = {
+	idle: spr_p1_idle,
+	walk: spr_p1_walk,
+	damage: spr_p1_damage,
+	dead: spr_p1_dead,
+}
+
 number = 1
 state = STATES.IDLE
 
@@ -17,9 +25,12 @@ hspd = 0
 vspd = 0
 atkspd = 30
 dmg = 1
+
 imunity_timer = 0
 life_animation = false
-
+y_scale = 1
+x_scale = 1
+side = 1
 
 gun_position = {
 	x: x, 
@@ -64,10 +75,13 @@ function shoot() {
 }
 
 function levar_dano() {
-	if (imunity_timer <= 0) {
+	if (imunity_timer <= 0 and state != STATES.DEATH) {
 		life -= 1
+		// visual
 		life_animation = true
 		imunity_timer = game_get_speed(gamespeed_fps)
+		x_scale = 1.5
+		y_scale = .7
 	}
 }
 

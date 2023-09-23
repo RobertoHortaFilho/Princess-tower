@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_player_1",
-    "path": "sprites/spr_player_1/spr_player_1.yy",
+    "name": "spr_p1_walk",
+    "path": "sprites/spr_p1_walk/spr_p1_walk.yy",
   },
   "spriteMaskId": null,
   "visible": true,
