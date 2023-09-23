@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 src_enemy_damage_by_colision()
-
+search_target()
 src_enemy_move_and_colider()
 
 if (hspd != 0) {

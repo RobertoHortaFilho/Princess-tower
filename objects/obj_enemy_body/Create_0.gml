@@ -22,5 +22,16 @@ function knockback(_direction) {
 	alarm[11] = game_get_speed(gamespeed_fps) / 8
 }
 
+target = noone
+function search_target() {
+	if (instance_exists(obj_player)) {
+		var _near = instance_nearest(x,y,obj_player)
+		if _near.state != STATES.DEATH {
+			target = _near
+		} else {
+			target = noone
+		}
+	}
+}
 
 
