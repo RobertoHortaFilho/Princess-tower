@@ -41,6 +41,7 @@
     {"name":"obj_enemy_wolf","order":4,"path":"objects/obj_enemy_wolf/obj_enemy_wolf.yy",},
     {"name":"obj_enemy_goblin_bow","order":3,"path":"objects/obj_enemy_goblin_bow/obj_enemy_goblin_bow.yy",},
     {"name":"spr_road","order":3,"path":"sprites/spr_road/spr_road.yy",},
+    {"name":"obj_cam","order":8,"path":"objects/obj_cam/obj_cam.yy",},
     {"name":"spr_hearth","order":6,"path":"sprites/spr_hearth/spr_hearth.yy",},
     {"name":"obj_enemy_goblin","order":1,"path":"objects/obj_enemy_goblin/obj_enemy_goblin.yy",},
     {"name":"spr_goblin_attack","order":2,"path":"sprites/spr_goblin_attack/spr_goblin_attack.yy",},

@@ -82,6 +82,7 @@ function levar_dano() {
 		imunity_timer = game_get_speed(gamespeed_fps)
 		x_scale = 1.5
 		y_scale = .7
+		src_cam_shake(3)
 	}
 }
 

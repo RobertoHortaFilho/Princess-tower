@@ -62,6 +62,7 @@
     {"id":{"name":"obj_enemy_wolf","path":"objects/obj_enemy_wolf/obj_enemy_wolf.yy",},},
     {"id":{"name":"obj_enemy_goblin_bow","path":"objects/obj_enemy_goblin_bow/obj_enemy_goblin_bow.yy",},},
     {"id":{"name":"spr_road","path":"sprites/spr_road/spr_road.yy",},},
+    {"id":{"name":"obj_cam","path":"objects/obj_cam/obj_cam.yy",},},
     {"id":{"name":"spr_placeholder","path":"sprites/spr_placeholder/spr_placeholder.yy",},},
     {"id":{"name":"spr_hearth","path":"sprites/spr_hearth/spr_hearth.yy",},},
     {"id":{"name":"spr_goblin","path":"sprites/spr_goblin/spr_goblin.yy",},},
