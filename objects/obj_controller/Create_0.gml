@@ -22,6 +22,9 @@ if qtd_players == 1 {
 }
 
 
+global.spawner = new Spawner(15, 5)
+alarm[0] = 1
+
 
 
 

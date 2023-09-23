@@ -71,6 +71,7 @@ function shoot() {
 		})
 		gun_recoil.position = -3
 		gun_recoil.scale = 1.3
+	
 	}
 }
 
