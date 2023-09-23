@@ -12,10 +12,13 @@
     {"name":"spr_goblin","order":4,"path":"folders/Sprites/enemy/spr_goblin.yy",},
     {"name":"map","order":1,"path":"folders/Sprites/map.yy",},
     {"name":"player","order":2,"path":"folders/Sprites/player.yy",},
+    {"name":"Particula","order":11,"path":"folders/Particula.yy",},
+    {"name":"effects","order":5,"path":"folders/Sprites/effects.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_chest","order":9,"path":"sprites/spr_chest/spr_chest.yy",},
     {"name":"obj_arrow","order":5,"path":"objects/obj_arrow/obj_arrow.yy",},
+    {"name":"pt_leaf","order":1,"path":"particles/pt_leaf/pt_leaf.yy",},
     {"name":"spr_goblin_archer_shooting_end","order":2,"path":"sprites/spr_goblin_archer_shooting_end/spr_goblin_archer_shooting_end.yy",},
     {"name":"spr_pricess","order":6,"path":"sprites/spr_pricess/spr_pricess.yy",},
     {"name":"obj_controller","order":6,"path":"objects/obj_controller/obj_controller.yy",},

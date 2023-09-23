@@ -86,4 +86,5 @@ function levar_dano() {
 	}
 }
 
+
 take_damage = levar_dano

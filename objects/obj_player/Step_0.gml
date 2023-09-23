@@ -41,6 +41,11 @@ if hspd !=0 {
 	side = sign(hspd)
 }
 
+if hspd != 0 or vspd != 0 {
+	var _part = part_system_create(pt_puf)
+	part_system_position(_part, x, y -2)
+}
+
 if imunity_timer > 0 {
 	sprite_index = sprites.damage
 }
