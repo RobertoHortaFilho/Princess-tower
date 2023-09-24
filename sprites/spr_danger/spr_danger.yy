@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "map",
-    "path": "folders/Sprites/map.yy",
+    "name": "effects",
+    "path": "folders/Sprites/effects.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -1,6 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
-
 // Inherit the parent event
 event_inherited();
 
@@ -14,3 +12,11 @@ attack_range = 40
 
 attack_speed = game_get_speed(gamespeed_fps)
 alarm[0] = attack_speed
+
+
+function attack_tower() {
+	if instance_exists(obj_tower) {
+		obj_tower.take_damage()
+		state = STATES.DEATH
+	}
+}

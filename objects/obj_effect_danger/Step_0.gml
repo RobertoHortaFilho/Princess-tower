@@ -1,6 +1,6 @@
 /// @description clamp in screen
-x = clamp(x, 30, room_width - 30)
-y = clamp(y, 30, room_height - 30)
+x = clamp(x, 10, room_width - 10)
+y = clamp(y, 10, room_height - 10)
 
 
 

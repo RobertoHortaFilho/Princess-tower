@@ -6,6 +6,7 @@ enum STATES {
 	CHASE,
 	INDAMAGE,
 	KNOCKBACK,
+	ATTACK_TOWER
 }
 
 global.p1 = noone

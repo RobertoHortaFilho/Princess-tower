@@ -46,6 +46,9 @@ switch state {
 		hspd = 0
 		vspd = 0
 	break;
+	case STATES.ATTACK_TOWER:
+		sprite_index = spr_goblin_tower
+		break;
 }
 
 

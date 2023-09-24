@@ -15,14 +15,20 @@ function Spawner(_qtd, _max = 10) constructor {
 		}
 		
 		self.create_enemy = function(_obj) {
-			var _xx = irandom_range(0, room_width)
-			var _yy = irandom_range(0, room_height)
-			var _top = choose(true, false)
-			var _left = choose(true, false)
-			var _x = _left ? -_xx : room_width + _xx
-			var _y = _top ? -_yy : room_height + _yy
-			instance_create_layer(_x, _y, "enemys", _obj)
-			instance_create_layer(_x, _y, "enemys", obj_effect_danger)
+			// 1 = right 2 = top 3 = left 4 = botton 
+			var _choice = choose(1,2,3,4)
+			if _choice == 1 or _choice == 3 {
+				//side 
+				var _yy = irandom_range(0, room_height)
+				var _xx = _choice == 1 ? room_width + 40 : -40
+			} else {
+				//top / botton
+				var _xx = irandom_range(0, room_width)
+				var _yy = _choice == 4 ? room_height + 40 : -40 
+			
+			}
+			instance_create_layer(_xx, _yy, "enemys", _obj)
+			instance_create_layer(_xx, _yy, "effects", obj_effect_danger)
 			self.qtd --;
 		}
 		

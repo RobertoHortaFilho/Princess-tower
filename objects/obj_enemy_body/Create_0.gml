@@ -9,11 +9,16 @@ hspd = 0
 vspd = 0
 state = STATES.RUN
 
+tower_attack_range = 10
 chase_min = 60
 chase_max = 80
 attack_range = 30
 
 back_distance = 3
+
+damage_tower_timer_total = sprite_get_number(spr_loading_damage)
+damage_tower_timer = 0
+damage_tower_timer_speed = sprite_get_speed(spr_loading_damage) / 60
 
 function knockback(_direction) {
 	state = STATES.KNOCKBACK
@@ -34,4 +39,15 @@ function search_target() {
 	}
 }
 
+function attack_tower_verify() {
+	if instance_exists(obj_tower) and state == STATES.RUN {
+		if (distance_to_point(obj_tower.x, obj_tower.y) < tower_attack_range) {
+			state = STATES.ATTACK_TOWER
+			damage_tower_timer = 0
+		}
+	}
+}
 
+function attack_tower() {
+	
+}
