@@ -94,8 +94,8 @@
     {"id":{"name":"rm_tower","path":"rooms/rm_tower/rm_tower.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_tower","path":"rooms/rm_tower/rm_tower.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"roomId":{"name":"rm_tower","path":"rooms/rm_tower/rm_tower.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

@@ -23,5 +23,5 @@ function src_cam_shake(_val) {
 }
 
 function src_gameover() {
-	room_restart()
+	game_restart()
 }
