@@ -21,3 +21,7 @@ function src_cam_shake(_val) {
 		obj_cam.shake(_val)
 	}
 }
+
+function src_gameover() {
+	room_restart()
+}
