@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-qtd_players = 1
+qtd_players = 2
 global.p1 = noone
 global.p2 = noone
 
