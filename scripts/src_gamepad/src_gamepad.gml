@@ -5,24 +5,37 @@ function Gamepad() constructor {
 	static _noone = -4
 	self.g1 = _noone
 	self.g2 = _noone
+	self.socket1_in_use = false
+	self.socket2_in_use = false
 	self.deadzone = 0.25
 	
 	self.load_gamepad = function () {
 		self.g1 = _noone
 		self.g2 = _noone
+		self.socket1_in_use = false
+		self.socket2_in_use = false
 		var _maxgamepad = gamepad_get_device_count()
 		for (var _i = 0; _i < _maxgamepad; _i++) {
 			if gamepad_is_connected(_i) {
-				if self.g1 == noone { self.g1 = _i }
-				else if self.g2 == noone { self.g2 = _i }
+				if self.g1 == noone { self.g1 = _i; self.socket1_in_use = true}
+				else if self.g2 == noone { self.g2 = _i; self.socket2_in_use = true}
 			}
 		}
 		self.set_deadzone()
 	}
-
+	
 	self.set_deadzone = function () {
 		if self.g1 != noone { gamepad_set_axis_deadzone(self.g1, self.deadzone) }
 		if self.g2 != noone { gamepad_set_axis_deadzone(self.g2, self.deadzone) }
+	}
+	
+	self.who_is_disconnected = function () {
+		if !gamepad_is_connected(self.g1) and self.socket1_in_use {
+			return 1
+		} else if ! gamepad_is_connected(self.g2) and self.socket2_in_use {
+			return 2
+		}
+		return 0
 	}
 	
 	self.controllers_numbers = function () {

@@ -10,5 +10,9 @@ if _reset and alarm[1] == -1 {
 	alarm[1] = 180
 }
 
+var _disconnected = global.gamepad.who_is_disconnected()
+if (_disconnected) {
+	show_message(_disconnected)
+}
 
 
