@@ -6,25 +6,27 @@ function Spawner(_qtd, _max = 10) constructor {
 		self.max_enemys = _max
 		self.in_game = 0
 		self.delay = 20
+		self.pass = false
 		
 		self.reload_in_game = function() {
 			self.in_game = instance_number(obj_enemy_body)
 			if (self.qtd <= 0 and self.in_game == 0) {
-				//show_message("passou")
+				self.pass = true
 			}
 		}
 		
 		self.create_enemy = function(_obj) {
 			// 1 = right 2 = top 3 = left 4 = botton 
 			var _choice = choose(1,2,3,4)
+			var _xx, _yy
 			if _choice == 1 or _choice == 3 {
 				//side 
-				var _yy = irandom_range(0, room_height)
-				var _xx = _choice == 1 ? room_width + 40 : -40
+				_yy = irandom_range(0, room_height)
+				_xx = _choice == 1 ? room_width + 40 : -40
 			} else {
 				//top / botton
-				var _xx = irandom_range(0, room_width)
-				var _yy = _choice == 4 ? room_height + 40 : -40 
+				_xx = irandom_range(0, room_width)
+				_yy = _choice == 4 ? room_height + 40 : -40 
 			
 			}
 			instance_create_layer(_xx, _yy, "enemys", _obj)
@@ -38,4 +40,15 @@ function Spawner(_qtd, _max = 10) constructor {
 				self.create_enemy(obj_enemy_goblin_bow)
 			}
 		}	
+}
+	
+
+function src_get_all_maps () {
+	return [
+	[1, 10],
+	[2, 10],
+	[10, 4],
+	[3, 10],
+	[2, 10],
+	]
 }

@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//	instanciando players
 qtd_players = variable_global_exists("qtd_players") ? global.qtd_players : 1
 global.p1 = noone
 global.p2 = noone
@@ -18,12 +19,22 @@ if qtd_players == 1 {
 	} else {
 	global.p2.gp = global.gamepad.g1
 	}
-	
 }
 
+//	variaveis de spawner
 
-//global.spawner = new Spawner(15, 5)
-//alarm[0] = 1
+alarm[0] = 1 // iniciando timer de spawner
+
+maps = ds_list_create()
+var _all_maps = src_get_all_maps()
+
+for (var _i = 0; _i < array_length(_all_maps); _i ++) {
+	maps[| _i] = _all_maps[_i]
+}
+wave = 0;
+
+global.spawner = new Spawner(maps[| wave][0], maps[| wave][1]);
+
 
 
 
