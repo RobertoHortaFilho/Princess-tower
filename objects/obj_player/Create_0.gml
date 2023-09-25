@@ -1,14 +1,14 @@
 /// @description 
 
 keys = {
-	up: vk_up,
-	down: vk_down,
-	left: vk_left,
-	right: vk_right,
+	up: ord("W"),
+	down: ord("S"),
+	left: ord("A"),
+	right: ord("D"),
 	shoot: mb_left
 }
 
-gp = global.gamepad.g1
+gp = noone
 
 sprites = {
 	idle: spr_p1_idle,
