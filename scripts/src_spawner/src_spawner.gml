@@ -1,14 +1,42 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function Spawner(_qtd, _max = 10) constructor {
-		self.qtd = _qtd
-		self.max_enemys = _max
+function Stages () constructor {
+	self.struct = ds_list_create()
+	
+	self.add_maps = function () {
+		ds_list_add(self.struct, [4, 2],
+		[1, 3],
+		//[8, 2],
+		//[4, 4],
+		//[8, 3],
+		//[7, 4],
+		)
+	}
+	// fazer com q a lista em vez de ser qtd e max 
+	// vai ser o numero de cada tipo que vai aparecer na sala ex [10= total, 3= normal, 5=bow, 2=wolf ]
+	self.add_maps()
+	
+	self.get_map = function (_n) {
+		if _n > ds_list_size(self.struct) -1 {
+			return self.struct[| (ds_list_size(self.struct) -1)]
+		}
+		return self.struct[| _n]
+	}
+}
+
+function Spawner() constructor {
+		self.stage = new Stages()
+		self.qtd = self.stage.get_map(0)[0]
+		self.max_enemys = self.stage.get_map(0)[1]
 		self.in_game = 0
 		self.delay = 20
 		self.pass = false
+
+		self.wave = 0
+		self.dificult = 0
 		
-		self.reload_in_game = function() {
+		self.reload_in_game = function() { //atualiza quantos inimigos vivos;
 			self.in_game = instance_number(obj_enemy_body)
 			if (self.qtd <= 0 and self.in_game == 0) {
 				self.pass = true
@@ -39,7 +67,27 @@ function Spawner(_qtd, _max = 10) constructor {
 			if self.in_game < self.max_enemys and self.qtd > 0 {
 				self.create_enemy(obj_enemy_goblin_bow)
 			}
-		}	
+		}
+		
+		self.next_wave_reset = function () {
+			var _map = self.stage.get_map(self.wave)
+			self.qtd = _map[0]
+			self.max_enemys = _map[1]
+		}
+		
+		self.next_wave = function () {
+			self.pass = false
+			self.wave += 1
+			self.dificult = self.wave div 5
+			self.next_wave_reset()
+		}
+		
+		self.run = function () {
+			self.spawn_new_enemys()
+			if self.pass {
+				self.next_wave()
+			}
+		}
 }
 	
 

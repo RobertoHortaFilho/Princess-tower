@@ -25,15 +25,15 @@ if qtd_players == 1 {
 
 alarm[0] = 1 // iniciando timer de spawner
 
-maps = ds_list_create()
-var _all_maps = src_get_all_maps()
+//maps = ds_list_create()
+//var _all_maps = src_get_all_maps()
 
-for (var _i = 0; _i < array_length(_all_maps); _i ++) {
-	maps[| _i] = _all_maps[_i]
-}
-wave = 0;
+//for (var _i = 0; _i < array_length(_all_maps); _i ++) {
+//	maps[| _i] = _all_maps[_i]
+//}
+//wave = 0;
 
-global.spawner = new Spawner(maps[| wave][0], maps[| wave][1]);
+global.spawner = new Spawner();
 
 
 
