@@ -1,3 +1,4 @@
+randomize()
 enum STATES {
 	IDLE,
 	RUN,

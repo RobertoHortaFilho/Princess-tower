@@ -1,10 +1,12 @@
 /// @description
 var _x = room_width / 2
 if state == "players" {
-	var _up = keyboard_check_pressed(keys.up)
-	var _down = keyboard_check_pressed(keys.down)
-	var _confirm = keyboard_check_pressed(keys.confirm)
-	var _back = keyboard_check_pressed(keys.back)
+	var _up = keyboard_check_pressed(keys.up) || global.gamepad.click_up(controller)
+	var _down = keyboard_check_pressed(keys.down) || global.gamepad.click_down(controller)
+	var _confirm = keyboard_check_pressed(keys.confirm) || global.gamepad.click_confirm(controller)
+	var _back = keyboard_check_pressed(keys.back) || global.gamepad.click_return(controller)
+	
+	//show_debug_message(_down)
 	
 	if _confirm {
 		global.qtd_players = selected + 1
@@ -26,12 +28,8 @@ if state == "players" {
 	}
 } else if (state == "start") {
 	draw_sprite(spr_start, 0, _x, room_height / 4 * 3)
-	if keyboard_check_pressed(vk_anykey) { state = "players" }
+	if keyboard_check_pressed(vk_anykey) || global.gamepad.click_confirm(controller) { state = "players" }
 }
-
-
-
-
 
 
 

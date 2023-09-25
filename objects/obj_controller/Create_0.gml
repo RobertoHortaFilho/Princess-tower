@@ -19,6 +19,7 @@ if qtd_players == 1 {
 	global.p2.keys.down = ord("S")
 	global.p2.keys.left = ord("A")
 	global.p2.keys.right = ord("D")
+	global.p2.gp = global.gamepad.g2
 }
 
 

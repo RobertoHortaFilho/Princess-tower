@@ -1,10 +1,25 @@
 /// @description
+var _up, _down, _left, _right, _shoot
 
-var _up = keyboard_check(keys.up)
-var _down = keyboard_check(keys.down)
-var _left = keyboard_check(keys.left)
-var _right = keyboard_check(keys.right)
-if keyboard_check(ord("R")) {state = STATES.DEATH}
+if gp != noone {
+	_up = global.gamepad.on_press_up(gp)
+	_down = global.gamepad.on_press_down(gp)
+	_left = global.gamepad.on_press_left(gp)
+	_right = global.gamepad.on_press_right(gp)
+	_shoot = global.gamepad.shooting(gp)
+} else {
+	_up = keyboard_check(keys.up)
+	_down = keyboard_check(keys.down)
+	_left = keyboard_check(keys.left)
+	_right = keyboard_check(keys.right)
+	_shoot = mouse_check_button(keys.shoot)
+}
+
+
+
+if keyboard_check(ord("R")) {state = STATES.DEATH} // delete
+
+
 depth = -y
 
 gun_recoil.position = lerp(gun_recoil.position, 0, .05)
@@ -18,8 +33,8 @@ switch state {
 		hspd = 0;
 		vspd = 0;
 		
-		if mouse_check_button(keys.shoot) { shoot() }
-		move_gun_mouse()
+		if _shoot { shoot() }
+		move_gun()
 		if (_up or _down or _left or _right) { state = STATES.RUN }
 		break;
 	case STATES.RUN:
@@ -28,8 +43,8 @@ switch state {
 		hspd = lengthdir_x(spd, _ang)
 		vspd = lengthdir_y(spd, _ang)
 		
-		if mouse_check_button(keys.shoot) { shoot() }
-		move_gun_mouse()
+		if _shoot { shoot() }
+		move_gun()
 		if (!_up and !_down and !_right and !_left) { state = STATES.IDLE }
 		break;
 	case STATES.DEATH:

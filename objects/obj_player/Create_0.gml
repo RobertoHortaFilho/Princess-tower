@@ -8,6 +8,8 @@ keys = {
 	shoot: mb_left
 }
 
+gp = global.gamepad.g1
+
 sprites = {
 	idle: spr_p1_idle,
 	walk: spr_p1_walk,
@@ -43,22 +45,45 @@ gun_recoil = {
 	position: 0,
 	scale: 1,
 }
+gun_distance = 6
+gun_direction = 0
+
 
 function move_gun_mouse() {
-	var _distance = 6
 	var _point_x = mouse_x
 	var _point_y = mouse_y
 	var _point_x_start = x
 	var _point_y_start = y
-	var _direction = point_direction(_point_x_start, _point_y_start, _point_x, _point_y)
-	gun_position.x = x + lengthdir_x(_distance, _direction)
-	gun_position.y = y - 5 + lengthdir_y(_distance, _direction)
-	gun_position.angle = _direction
-	if _direction < 90 or _direction > 270 {
+	gun_direction = point_direction(_point_x_start, _point_y_start, _point_x, _point_y)
+	
+}
+
+function move_gun_gamepad() {
+	var _aixsv = global.gamepad.aim_v(gp)
+	var _aixsh = global.gamepad.aim_h(gp)
+	if (_aixsh != 0 or _aixsv != 0) {
+		var _dir = point_direction(0,0, _aixsh, _aixsv)
+		if (gun_direction < 45 and _dir > 315) { gun_direction = _dir }
+		else if (gun_direction > 315 and _dir < 45) { gun_direction = _dir }
+		gun_direction = lerp(gun_direction, _dir, .2)
+	}
+}
+
+function move_gun() {
+	if gp == noone {
+		move_gun_mouse()
+	} else {
+		move_gun_gamepad()
+	}
+	gun_position.x = x + lengthdir_x(gun_distance, gun_direction)
+	gun_position.y = y - 5 + lengthdir_y(gun_distance, gun_direction)
+	gun_position.angle = gun_direction
+	if gun_direction < 90 or gun_direction > 270 {
 		gun_position.side = 1
 	} else {
 		gun_position.side = -1
 	}
+
 }
 
 function shoot() {

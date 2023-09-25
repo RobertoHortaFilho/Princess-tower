@@ -15,6 +15,8 @@ options = [spr_1player, spr_2player]
 selected = 0
 max_selected = array_length(options)
 
+controller = global.gamepad.g1 
+
 
 
 
