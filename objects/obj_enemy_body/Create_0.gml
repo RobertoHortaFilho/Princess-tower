@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-life = 5
+life = 4
 dmg = 1
 spd = 1
 hspd = 0

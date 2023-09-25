@@ -24,16 +24,10 @@ if qtd_players == 1 {
 //	variaveis de spawner
 
 alarm[0] = 1 // iniciando timer de spawner
-
-//maps = ds_list_create()
-//var _all_maps = src_get_all_maps()
-
-//for (var _i = 0; _i < array_length(_all_maps); _i ++) {
-//	maps[| _i] = _all_maps[_i]
-//}
-//wave = 0;
-
 global.spawner = new Spawner();
+
+// reset coins
+global.coins = 0
 
 
 

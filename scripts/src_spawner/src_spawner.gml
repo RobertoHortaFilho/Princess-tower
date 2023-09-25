@@ -6,11 +6,24 @@ function Stages () constructor {
 	
 	self.add_maps = function () {
 		ds_list_add(self.struct, [4, 2],
-		[1, 3],
-		//[8, 2],
-		//[4, 4],
-		//[8, 3],
-		//[7, 4],
+		[4, 1],
+		[8, 3],
+		[6, 6],
+		[12, 4],
+		
+		[6, 3], // _d = 1
+		[8 ,4],
+		[6 ,4],
+		[10 ,4],
+		[15 ,5],
+		
+		[8 ,4], // _d = 2
+		[9, 4],
+		[5, 5],
+		[13, 6],
+		[18, 6],
+		
+		[15, 5] // _d = 3
 		)
 	}
 	// fazer com q a lista em vez de ser qtd e max 
@@ -22,6 +35,33 @@ function Stages () constructor {
 			return self.struct[| (ds_list_size(self.struct) -1)]
 		}
 		return self.struct[| _n]
+	}
+		
+	self.get_random_enemy = function (_d, _w = 0) {
+		show_debug_message(_d)
+		var _rng = irandom_range(1, 100)
+		if (_d == 0) {
+			if _rng > 90 { return global.enemys[? ENEMY.GOBLINBOW] } // 10%
+			return global.enemys[? ENEMY.GOBLIN]
+		}
+
+		if (_d == 1) {
+			if _rng > 90 { return global.enemys[? ENEMY.GOBLIN] } // 10%
+			if _rng > 85 { return global.enemys[? ENEMY.WOLF] } // 5%
+			return global.enemys[? ENEMY.GOBLINBOW]
+		}
+		
+		if (_d == 2) {
+			if _rng > 70 { return global.enemys[? ENEMY.WOLF] } // 10%
+			if _rng > 65 - _w{ return global.enemys[? ENEMY.GOBLIN] } // 40% + _w
+			return global.enemys[? ENEMY.WOLF]
+		}
+		
+		
+		if _rng > 80 - _d * 2 { return global.enemys[? ENEMY.GOBLIN] } // 10%	2% / dificult
+		if _rng > 65 - _d * 2 { return global.enemys[? ENEMY.WOLF] } //	5%	2% / dificult
+		return global.enemys[? ENEMY.GOBLIN]
+		
 	}
 }
 
@@ -43,7 +83,7 @@ function Spawner() constructor {
 			}
 		}
 		
-		self.create_enemy = function(_obj) {
+		self.create_enemy = function() {
 			// 1 = right 2 = top 3 = left 4 = botton 
 			var _choice = choose(1,2,3,4)
 			var _xx, _yy
@@ -55,9 +95,9 @@ function Spawner() constructor {
 				//top / botton
 				_xx = irandom_range(0, room_width)
 				_yy = _choice == 4 ? room_height + 40 : -40 
-			
 			}
-			instance_create_layer(_xx, _yy, "enemys", _obj)
+			var _e = self.stage.get_random_enemy(self.dificult, self.wave)
+			instance_create_layer(_xx, _yy, "enemys", _e)
 			instance_create_layer(_xx, _yy, "effects", obj_effect_danger)
 			self.qtd --;
 		}
@@ -65,7 +105,7 @@ function Spawner() constructor {
 		self.spawn_new_enemys = function() {
 			self.reload_in_game()
 			if self.in_game < self.max_enemys and self.qtd > 0 {
-				self.create_enemy(obj_enemy_goblin_bow)
+				self.create_enemy()
 			}
 		}
 		
@@ -87,6 +127,7 @@ function Spawner() constructor {
 			if self.pass {
 				self.next_wave()
 			}
+			if keyboard_check(vk_enter) self.wave += 1 
 		}
 }
 	

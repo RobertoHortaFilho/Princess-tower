@@ -1,4 +1,5 @@
 randomize()
+
 enum STATES {
 	IDLE,
 	RUN,
@@ -10,8 +11,25 @@ enum STATES {
 	ATTACK_TOWER
 }
 
+enum ENEMY {
+	GOBLIN,
+	GOBLINBOW,
+	WOLF,
+	TOTAL,
+}
+
+global.enemys = ds_map_create()
+
+global.enemys[? ENEMY.GOBLIN] = obj_enemy_goblin
+global.enemys[? ENEMY.GOBLINBOW] = obj_enemy_goblin_bow
+global.enemys[? ENEMY.WOLF] = obj_enemy_wolf
+
+
+
 global.p1 = noone
 global.p2 = noone
+
+global.coins = 0
 
 function src_reset_player_status(){
 

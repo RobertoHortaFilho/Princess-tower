@@ -2,6 +2,7 @@
 // Inherit the parent event
 event_inherited();
 
+life = 2
 
 dir = 0
 spd = .2

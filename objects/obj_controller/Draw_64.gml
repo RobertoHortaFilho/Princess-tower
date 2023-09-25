@@ -28,7 +28,6 @@ if (global.p2 != noone) {
 
 if global.spawner {
 	var _middle_x = camera_get_view_width(0) / 2
-	show_debug_message(_middle_x)
 	draw_text(_middle_x, 20, (global.spawner.wave + 1))
 }
 
