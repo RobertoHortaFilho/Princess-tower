@@ -2,7 +2,7 @@
 // You can write your code in this editor
 depth = -y
 
-life = 2
+life = 3
 state = STATES.IDLE
 angle = 0
 angle_variance = 0

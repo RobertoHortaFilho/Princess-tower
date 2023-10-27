@@ -13,8 +13,10 @@
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fonts","folderPath":"folders/Fonts.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"controlers","folderPath":"folders/Objects/controlers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"enemy","folderPath":"folders/Objects/enemy.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"menu","folderPath":"folders/Objects/menu.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"player","folderPath":"folders/Objects/player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particula","folderPath":"folders/Particula.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Scripts.yy",},
@@ -27,14 +29,12 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"map","folderPath":"folders/Sprites/map.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"menu","folderPath":"folders/Sprites/menu.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"player","folderPath":"folders/Sprites/player.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"player","folderPath":"folders/Objects/player.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"controlers","folderPath":"folders/Objects/controlers.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"spr_goblin_tower","path":"sprites/spr_goblin_tower/spr_goblin_tower.yy",},},

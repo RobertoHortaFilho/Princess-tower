@@ -2,8 +2,10 @@
   "FolderOrderSettings": [
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
+    {"name":"controlers","order":9,"path":"folders/Objects/controlers.yy",},
     {"name":"enemy","order":2,"path":"folders/Objects/enemy.yy",},
     {"name":"menu","order":7,"path":"folders/Objects/menu.yy",},
+    {"name":"player","order":8,"path":"folders/Objects/player.yy",},
     {"name":"Particula","order":11,"path":"folders/Particula.yy",},
     {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
@@ -16,8 +18,6 @@
     {"name":"map","order":1,"path":"folders/Sprites/map.yy",},
     {"name":"menu","order":6,"path":"folders/Sprites/menu.yy",},
     {"name":"player","order":2,"path":"folders/Sprites/player.yy",},
-    {"name":"player","order":8,"path":"folders/Objects/player.yy",},
-    {"name":"controlers","order":9,"path":"folders/Objects/controlers.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_goblin_tower","order":3,"path":"sprites/spr_goblin_tower/spr_goblin_tower.yy",},
